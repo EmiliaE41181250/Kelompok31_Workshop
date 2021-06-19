@@ -57,8 +57,8 @@
                                     <td>$data[no_hp]</td>
                                     <td>
                                     <div class='norebuttom'>
-                                    <a class=\"btn btn-primary\" href='./?page=supplier&aksi=ubah&id=" . $data['id_supplier'] . "'><i class='fa fa-pencil'></i></a>
-                                    <a class=\"btn btn-warning\" data-a=" . $data['nama_supplier'] . " id='hapus' href='./proses/proseshapus.php/?op=supplier&id=" . $data['id_supplier'] . "'><i class='fa fa-trash'></i></a>
+                                    <a class=\"btn btn-warning\" href='./?page=supplier&aksi=ubah&id=" . $data['id_supplier'] . "'><i class='fa fa-pencil'></i></a>
+                                    <a class=\"btn btn-danger\" data-a=" . $data['nama_supplier'] . " id='hapus' href='./proses/proseshapus.php/?op=supplier&id=" . $data['id_supplier'] . "'><i class='fa fa-trash'></i></a>
                                 </div></tr>";
                 $no++;
               }
