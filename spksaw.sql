@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Waktu pembuatan: 05 Jun 2021 pada 01.09
--- Versi server: 8.0.18
--- Versi PHP: 7.2.24
+-- Host: 127.0.0.1
+-- Generation Time: Jun 19, 2021 at 03:38 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bobot_kriteria`
+-- Table structure for table `bobot_kriteria`
 --
 
 CREATE TABLE `bobot_kriteria` (
@@ -33,24 +33,23 @@ CREATE TABLE `bobot_kriteria` (
   `id_jenisbarang` int(3) NOT NULL,
   `id_kriteria` int(3) NOT NULL,
   `bobot` float NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bobot_kriteria`
+-- Dumping data for table `bobot_kriteria`
 --
 
 INSERT INTO `bobot_kriteria` (`id_bobotkriteria`, `id_jenisbarang`, `id_kriteria`, `bobot`) VALUES
-(7, 1, 1, 0.5),
-(8, 1, 2, 1),
-(9, 1, 3, 0.75),
-(10, 1, 4, 1),
-(11, 1, 5, 1),
-(12, 1, 6, 0.5);
+(7, 1, 1, 3),
+(8, 1, 2, 3),
+(10, 1, 4, 2),
+(12, 1, 6, 1),
+(13, 1, 8, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hasil`
+-- Table structure for table `hasil`
 --
 
 CREATE TABLE `hasil` (
@@ -58,64 +57,64 @@ CREATE TABLE `hasil` (
   `id_jenisbarang` int(3) NOT NULL,
   `id_supplier` int(3) NOT NULL,
   `hasil` float NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `hasil`
+-- Dumping data for table `hasil`
 --
 
 INSERT INTO `hasil` (`id_hasil`, `id_jenisbarang`, `id_supplier`, `hasil`) VALUES
-(1, 1, 6, 3.8335),
-(2, 1, 7, 4),
-(3, 1, 8, 3.75025);
+(1, 1, 6, 8.7),
+(2, 1, 7, 6.9),
+(3, 1, 8, 7.2),
+(4, 1, 30, 8.6),
+(5, 1, 31, 5.5);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jenis_barang`
+-- Table structure for table `jenis_barang`
 --
 
 CREATE TABLE `jenis_barang` (
   `id_jenisbarang` int(3) NOT NULL,
   `namaBarang` varchar(30) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `jenis_barang`
+-- Dumping data for table `jenis_barang`
 --
 
 INSERT INTO `jenis_barang` (`id_jenisbarang`, `namaBarang`) VALUES
-(1, 'Pompa j');
+(1, 'Obat-obatan Pertanian');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kriteria`
+-- Table structure for table `kriteria`
 --
 
 CREATE TABLE `kriteria` (
   `id_kriteria` int(3) NOT NULL,
-  `nama_kriteria` varchar(30)  NOT NULL,
+  `nama_kriteria` varchar(30) NOT NULL,
   `sifat` enum('Benefit','Cost') NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kriteria`
+-- Dumping data for table `kriteria`
 --
 
 INSERT INTO `kriteria` (`id_kriteria`, `nama_kriteria`, `sifat`) VALUES
-(1, 'kecepatan pengiriman gaes', 'Cost'),
-(2, 'Tingkat Diskon', 'Benefit'),
-(3, 'Pelayanan', 'Benefit'),
-(4, 'garansi', 'Benefit'),
-(5, 'keaslian barang', 'Benefit'),
-(6, 'tempo pebayaran', 'Benefit'),
-(7, 'Test gaes', 'Cost');
+(1, 'Harga', 'Benefit'),
+(2, 'Pelayanan', 'Benefit'),
+(4, 'Lokasi', 'Benefit'),
+(6, 'Pembayaran', 'Benefit'),
+(8, 'Kelengkapan Produk', 'Benefit');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_kriteria`
+-- Table structure for table `nilai_kriteria`
 --
 
 CREATE TABLE `nilai_kriteria` (
@@ -123,41 +122,42 @@ CREATE TABLE `nilai_kriteria` (
   `id_kriteria` int(3) NOT NULL,
   `nilai` float NOT NULL,
   `keterangan` varchar(50) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilai_kriteria`
+-- Dumping data for table `nilai_kriteria`
 --
 
 INSERT INTO `nilai_kriteria` (`id_nilaikriteria`, `id_kriteria`, `nilai`, `keterangan`) VALUES
-(5, 2, 0.25, '0 % (Tidak ada)'),
-(6, 2, 0.5, '1% - 10%'),
-(7, 2, 0.75, '11% - 20%'),
-(8, 2, 1, '20 % lebih'),
-(10, 3, 0, 'sangat buruk'),
-(11, 3, 0.25, 'buruk'),
-(12, 3, 0.5, 'cukup'),
-(13, 3, 0.75, 'puas'),
-(14, 4, 0.25, 'tidak ada'),
-(15, 4, 0.5, 'kurang dari 1 tahun'),
-(16, 4, 0.75, '1 tahun - 2 tahun'),
-(17, 5, 0.5, 'KW'),
-(18, 5, 1, 'Original / Asli'),
-(19, 6, 0.25, 'Kurang dari 1 Minggu'),
-(20, 6, 0.5, '1 minggu s/d 2 minggu'),
-(21, 6, 0.75, '3 minggu s/d 4 minggu'),
-(22, 1, 0.25, '1 Hari'),
-(23, 1, 0.5, '2 hari â€“ 7 hari'),
-(24, 1, 0.75, '7 hari â€“ 1 bulan'),
-(25, 1, 1, '1 bulan lebih'),
-(26, 3, 1, 'sangat memuaskan'),
-(27, 4, 1, '2 tahun lebih'),
-(28, 6, 1, '1 bulan lebih');
+(29, 1, 1, 'Sangat murah'),
+(31, 1, 0.8, 'Murah'),
+(32, 1, 0.6, 'Rata-Rata'),
+(33, 1, 0.4, 'Mahal'),
+(34, 1, 0.2, 'Sangat mahal'),
+(35, 2, 1, 'Sangat baik'),
+(36, 2, 0.8, 'Baik'),
+(37, 2, 0.6, 'Cukup baik'),
+(38, 2, 0.4, 'Tidak baik'),
+(39, 2, 0.2, 'Sangat tidak baik'),
+(40, 4, 1, '1 km - 2 km'),
+(41, 4, 0.8, '3 km - 4 km'),
+(42, 4, 0.6, '5 km - 6 km'),
+(43, 4, 0.4, '7 km - 8 km'),
+(44, 4, 0.2, '9 km - 10 km'),
+(45, 6, 1, 'Hutang'),
+(46, 6, 0.8, 'Barang laku baru dibayar'),
+(47, 6, 0.6, 'DP'),
+(48, 6, 0.4, 'Cash (Tunai)'),
+(49, 8, 1, 'Sangat lengkap'),
+(50, 8, 0.8, 'Lengkap'),
+(51, 8, 0.4, 'Tidak lengkap'),
+(52, 8, 0.2, 'Sangat tidak lengkap'),
+(53, 8, 0.6, 'Kurang lengkap');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_supplier`
+-- Table structure for table `nilai_supplier`
 --
 
 CREATE TABLE `nilai_supplier` (
@@ -166,77 +166,88 @@ CREATE TABLE `nilai_supplier` (
   `id_jenisbarang` int(3) NOT NULL,
   `id_kriteria` int(3) NOT NULL,
   `id_nilaikriteria` int(3) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilai_supplier`
+-- Dumping data for table `nilai_supplier`
 --
 
 INSERT INTO `nilai_supplier` (`id_nilaisupplier`, `id_supplier`, `id_jenisbarang`, `id_kriteria`, `id_nilaikriteria`) VALUES
-(19, 6, 1, 1, 23),
-(20, 6, 1, 2, 6),
-(21, 6, 1, 3, 13),
-(22, 6, 1, 4, 16),
-(23, 6, 1, 5, 18),
-(24, 6, 1, 6, 20),
-(25, 7, 1, 1, 23),
-(26, 7, 1, 2, 7),
-(27, 7, 1, 3, 13),
-(28, 7, 1, 4, 15),
-(29, 7, 1, 5, 18),
-(30, 7, 1, 6, 21),
-(31, 8, 1, 1, 25),
-(32, 8, 1, 2, 8),
-(33, 8, 1, 3, 12),
-(34, 8, 1, 4, 27),
-(35, 8, 1, 5, 17),
-(36, 8, 1, 6, 21);
+(37, 6, 1, 1, 29),
+(38, 6, 1, 2, 35),
+(39, 6, 1, 4, 42),
+(40, 6, 1, 6, 48),
+(41, 6, 1, 8, 49),
+(42, 7, 1, 1, 32),
+(43, 7, 1, 2, 36),
+(44, 7, 1, 4, 41),
+(45, 7, 1, 6, 48),
+(46, 7, 1, 8, 53),
+(47, 8, 1, 1, 31),
+(48, 8, 1, 2, 38),
+(49, 8, 1, 4, 41),
+(50, 8, 1, 6, 46),
+(51, 8, 1, 8, 49),
+(52, 30, 1, 1, 31),
+(53, 30, 1, 2, 36),
+(54, 30, 1, 4, 40),
+(55, 30, 1, 6, 46),
+(56, 30, 1, 8, 50),
+(57, 31, 1, 1, 33),
+(58, 31, 1, 2, 38),
+(59, 31, 1, 4, 40),
+(60, 31, 1, 6, 48),
+(61, 31, 1, 8, 53);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
   `id_supplier` int(3) NOT NULL,
-  `nama_supplier` varchar(30)  NOT NULL
-) ;
+  `nama_supplier` varchar(50) NOT NULL,
+  `alamat` varchar(150) NOT NULL,
+  `no_hp` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
-INSERT INTO `supplier` (`id_supplier`, `nama_supplier`) VALUES
-(6, 'CV. A'),
-(7, 'CV. B'),
-(8, 'CV. C');
+INSERT INTO `supplier` (`id_supplier`, `nama_supplier`, `alamat`, `no_hp`) VALUES
+(6, 'Toko Pertanian Dharma Tani', 'Jl. Munginsidi, Sukorejo Kidul, kec Bojonegoro, kab Bojonegoro Jawa Timur 62115', '08123251731'),
+(7, 'CV. Istana Tani', 'Brenggolo, Kec Kalitindu, Kabupaten Bojonegoro, Jawa Timur 62152', ''),
+(8, 'Toko Pertanian Mohan Putra', 'Jl. Raya Bojonegoro-cepu RT1/RW1 Panjunan Kec kalitindu Kabupaten Bojonegror Jawa Timur 62152', '085257210061'),
+(30, 'UD. Nedyo Utomo', 'Jl. Raya Bojonegoro-cepu Ds. Mojosari, Kec Kalitindu, Kab Bojonegro, Jawa Timur 62152', '081335220394'),
+(31, 'Toko Pertanian Remen Tani ', 'Jl. Raya cepu, Ngringinrejo, Kec Kalitindu, Kab Bojonegoro, Jawa Timur 62152', '082335599653');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `Id_admin` int(3) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(200) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`Id_admin`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$M80eHFnCpX6RzDiN7LfRNeNMmUZM51y4gT9NqnerVnud9onIWBvyq');
+(1, 'Admin', '$2y$10$M80eHFnCpX6RzDiN7LfRNeNMmUZM51y4gT9NqnerVnud9onIWBvyq');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `bobot_kriteria`
+-- Indexes for table `bobot_kriteria`
 --
 ALTER TABLE `bobot_kriteria`
   ADD PRIMARY KEY (`id_bobotkriteria`),
@@ -244,7 +255,7 @@ ALTER TABLE `bobot_kriteria`
   ADD KEY `id_kriteria` (`id_kriteria`);
 
 --
--- Indeks untuk tabel `hasil`
+-- Indexes for table `hasil`
 --
 ALTER TABLE `hasil`
   ADD PRIMARY KEY (`id_hasil`),
@@ -252,26 +263,26 @@ ALTER TABLE `hasil`
   ADD KEY `id_supplier` (`id_supplier`);
 
 --
--- Indeks untuk tabel `jenis_barang`
+-- Indexes for table `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
   ADD PRIMARY KEY (`id_jenisbarang`);
 
 --
--- Indeks untuk tabel `kriteria`
+-- Indexes for table `kriteria`
 --
 ALTER TABLE `kriteria`
   ADD PRIMARY KEY (`id_kriteria`);
 
 --
--- Indeks untuk tabel `nilai_kriteria`
+-- Indexes for table `nilai_kriteria`
 --
 ALTER TABLE `nilai_kriteria`
   ADD PRIMARY KEY (`id_nilaikriteria`),
   ADD KEY `id_kriteria` (`id_kriteria`);
 
 --
--- Indeks untuk tabel `nilai_supplier`
+-- Indexes for table `nilai_supplier`
 --
 ALTER TABLE `nilai_supplier`
   ADD PRIMARY KEY (`id_nilaisupplier`),
@@ -281,95 +292,95 @@ ALTER TABLE `nilai_supplier`
   ADD KEY `id_nilaikriteria` (`id_nilaikriteria`);
 
 --
--- Indeks untuk tabel `supplier`
+-- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`Id_admin`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `bobot_kriteria`
+-- AUTO_INCREMENT for table `bobot_kriteria`
 --
 ALTER TABLE `bobot_kriteria`
-  MODIFY `id_bobotkriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_bobotkriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `hasil`
+-- AUTO_INCREMENT for table `hasil`
 --
 ALTER TABLE `hasil`
-  MODIFY `id_hasil` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_hasil` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `jenis_barang`
+-- AUTO_INCREMENT for table `jenis_barang`
 --
 ALTER TABLE `jenis_barang`
   MODIFY `id_jenisbarang` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `kriteria`
+-- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
-  MODIFY `id_kriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai_kriteria`
+-- AUTO_INCREMENT for table `nilai_kriteria`
 --
 ALTER TABLE `nilai_kriteria`
-  MODIFY `id_nilaikriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_nilaikriteria` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT untuk tabel `nilai_supplier`
+-- AUTO_INCREMENT for table `nilai_supplier`
 --
 ALTER TABLE `nilai_supplier`
-  MODIFY `id_nilaisupplier` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_nilaisupplier` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
--- AUTO_INCREMENT untuk tabel `supplier`
+-- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id_supplier` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_supplier` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `Id_admin` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `bobot_kriteria`
+-- Constraints for table `bobot_kriteria`
 --
 ALTER TABLE `bobot_kriteria`
   ADD CONSTRAINT `bobot_kriteria_ibfk_1` FOREIGN KEY (`id_jenisbarang`) REFERENCES `jenis_barang` (`id_jenisbarang`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `bobot_kriteria_ibfk_2` FOREIGN KEY (`id_kriteria`) REFERENCES `kriteria` (`id_kriteria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `hasil`
+-- Constraints for table `hasil`
 --
 ALTER TABLE `hasil`
   ADD CONSTRAINT `hasil_ibfk_1` FOREIGN KEY (`id_jenisbarang`) REFERENCES `jenis_barang` (`id_jenisbarang`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `hasil_ibfk_2` FOREIGN KEY (`id_supplier`) REFERENCES `supplier` (`id_supplier`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `nilai_kriteria`
+-- Constraints for table `nilai_kriteria`
 --
 ALTER TABLE `nilai_kriteria`
   ADD CONSTRAINT `nilai_kriteria_ibfk_1` FOREIGN KEY (`id_kriteria`) REFERENCES `kriteria` (`id_kriteria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `nilai_supplier`
+-- Constraints for table `nilai_supplier`
 --
 ALTER TABLE `nilai_supplier`
   ADD CONSTRAINT `nilai_supplier_ibfk_1` FOREIGN KEY (`id_jenisbarang`) REFERENCES `jenis_barang` (`id_jenisbarang`) ON DELETE CASCADE ON UPDATE CASCADE,
