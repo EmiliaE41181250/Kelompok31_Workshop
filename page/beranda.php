@@ -36,7 +36,7 @@ $kriteria=$executeK->num_rows;
               <p>Supplier</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="ion ion-document"></i>
             </div>
             <a href="<?= BASE."/?page=supplier" ?>" class="small-box-footer">Klik Disini <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -44,7 +44,7 @@ $kriteria=$executeK->num_rows;
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-purple">
             <div class="inner">
               <h3><?= $kriteria ?></h3>
 
@@ -61,7 +61,7 @@ $kriteria=$executeK->num_rows;
       </div>
       <h3 class="text-center">
       Selamat Datang,<br>
-            di Sistem Pendukung Keputusan pemilihan supplier berbasis web menggunakan metode <span class="text-blue">Simple Additive Weighting</span>
+             Sistem Pendukung Keputusan Pemilihan Supplier Berbasis Web Menggunakan Metode <span class="text-blue">Simple Additive Weighting</span>
       </h3>
       <!-- /.row (main row) -->
 

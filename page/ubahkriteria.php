@@ -10,14 +10,14 @@ if ($execute->num_rows > 0){
 }
 ?>
 <div class="panel-top panel-top-edit">
-    <b><i class="fa fa-pencil"></i> Ubah data</b>
+<b class="text-blue"> <i class="fa fa-pencil"></i> Ubah data</b>
 </div>
 <form id="form" method="POST" action="./proses/prosesubah.php">
     <input type="hidden" name="op" value="kriteria">
     <input type="hidden" name="id" value="<?php echo $data['id_kriteria']; ?>">
     <div class="panel-middle">
         <div class="group-input">
-            <label for="kriteria" >Nama Supplier :</label>
+            <label for="kriteria" >Nama Kriteria :</label>
             <input type="text" value="<?php echo $data['nama_kriteria']; ?>" class="form-custom" required autocomplete="off" placeholder="Nama Kriteria" id="kriteria" name="kriteria">
         </div>
         <div class="group-input">

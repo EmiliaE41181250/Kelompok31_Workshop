@@ -9,7 +9,7 @@ if ($execute->num_rows > 0){
 }
 ?>
 <div class="panel-top panel-top-edit">
-    <b><i class="fa fa-pencil"></i> Ubah data</b>
+<b class="text-blue"> <i class="fa fa-pencil"></i> Ubah data</b>
 </div>
 <form id="form" method="POST" action="./proses/prosesubah.php">
     <input type="hidden" name="op" value="supplier">

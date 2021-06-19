@@ -8,7 +8,7 @@
         <div class="group-input col-md-3">
             <label for="supplier">Supplier</label>
             <select class="form-custom form-control" required name="supplier" id="supplier">
-                <option selected disabled>--Pilih Supplier--</option>
+                <option selected disabled>-- Pilih Supplier --</option>
                 <?php
                 $query="SELECT id_supplier,nama_supplier FROM supplier";
                 $execute=$konek->query($query);
@@ -25,7 +25,7 @@
         <div class="group-input col-md-3">
             <label for="barang">Jenis Barang</label>
             <select class="form-custom form-control" required name="barang" id="barang">
-                <option selected disabled>--Pilih Jenis Barang--</option>
+                <option selected disabled>-- Pilih Jenis Barang --</option>
                 <?php
                 $query="SELECT * FROM jenis_barang";
                 $execute=$konek->query($query);

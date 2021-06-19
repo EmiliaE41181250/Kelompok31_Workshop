@@ -7,7 +7,7 @@
         <div class="group-input">
             <label for="kriteria" >Kriteria :</label>
             <select class="form-custom" required id="kriteria" name="kriteria">
-                <option selected disabled>-- Pilih Sifat Kriteria --</option>
+                <option selected disabled>-- Pilih Kriteria --</option>
                 <?php
                 $query="SELECT * FROM kriteria";
                 $execute=$konek->query($query);

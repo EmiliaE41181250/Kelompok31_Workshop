@@ -9,7 +9,7 @@ while ($data=$getnilaiKriteria->fetch_array(MYSQLI_ASSOC)) {
 }
 ?>
 <div class="panel-top panel-top-edit">
-    <b><i class="fa fas fa-pencil"></i> Ubah data</b>
+<b class="text-blue"> <i class="fa fas fa-pencil"></i> Ubah data</b>
 </div>
 <form id="form" action="./proses/prosesubah.php" method="POST">
     <input type="hidden" value="nilai" name="op">

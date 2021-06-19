@@ -15,7 +15,7 @@ if ($execute2->num_rows == 0){
 ?>
 <!-- judul -->
 <div class="panel-top panel-top-edit">
-    <b><i class="fa fa-pencil"></i> Ubah data</b>
+<b class="text-blue"><i class="fa fa-pencil"></i> Ubah data</b>
 </div>
 <form id="form" action="./proses/prosesubah.php" method="POST">
     <input type="hidden" value="bobot" name="op">

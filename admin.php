@@ -65,20 +65,20 @@ require './connect.php';
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?= BASE ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="<?= BASE ?>dist/img/usericon.jpg" class="user-image" alt="User Image">
               <span class="hidden-xs"><?= $_SESSION['user'] ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?= BASE ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?= BASE ?>dist/img/usericon.jpg" class="user-img-circle" alt="User Image">
                 <p>
                     <?= $_SESSION['user'] ?>
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
               </li>
               <!-- Menu Body -->
-              <li class="user-body">
+              <!--<li class="user-body">
                 <div class="row">
                   <div class="col-xs-4 text-center">
                     <a href="#">Followers</a>
@@ -90,15 +90,15 @@ require './connect.php';
                     <a href="#">Friends</a>
                   </div>
                 </div>
-                <!-- /.row -->
-              </li>
+                
+              </li>-->
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
+                <!--<div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+                </div>-->
                 <div class="pull-right">
-                  <a href="./logout.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="./logout.php" class="btn btn-outline-primary">Sign out</a>
                 </div>
               </li>
             </ul>
