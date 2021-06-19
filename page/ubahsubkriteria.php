@@ -36,7 +36,7 @@ if ($execute->num_rows > 0){
         </div>
         <div class="group-input">
             <label for="Nilai" >Nilai :</label>
-            <input type="text" value="<?php echo $data['nilai']; ?>" class="form-custom" required autocomplete="off" placeholder="Nilai" id="Nilai" name="nilai">
+            <input type="numeric" value="<?php echo $data['nilai']; ?>" class="form-custom" required autocomplete="off" placeholder="Nilai" id="Nilai" name="nilai">
         </div>
         <div class="group-input">
             <label for="keterangan" >Keterangan :</label>
@@ -44,7 +44,7 @@ if ($execute->num_rows > 0){
         </div>
     </div>
     <div class="panel-bottom">
-        <button type="submit" id="buttonsimpan" class="btn btn-green"><i class="fa fa-save"></i> Simpan</button>
-        <button type="reset" id="buttonreset" class="btn btn-second">Reset</button>
+        <button type="submit" id="buttonsimpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
+        <button type="reset" id="buttonreset" class="btn btn-secondary">Reset</button>
     </div>
 </form>

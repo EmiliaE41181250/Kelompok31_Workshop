@@ -1,40 +1,36 @@
-<?php
-require './connect.php';
-?>
-<!-- judul -->
-<div class="panel">
-    <div class="panel-middle" id="judul">
-        <img src="asset/image/bobot.svg">
-        <div id="judul-text">
-            <h2 class="text-blue">BOBOT</h2>
-            Halamanan Bobot Kriteria
-        </div>
-    </div>
-</div>
-<!-- judul -->
-<div class="row">
-    <div class="col-4">
-        <div class="panel">
-            <?php
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Bobot
+        <small>Halaman bobot</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <!-- <li><a href="#">Tables</a></li> -->
+        <li class="active">Bobot</li>
+      </ol>
+    </section>
+    <section class="content">
+    <div class=" box box-body">
+    
+        <?php
             if (@htmlspecialchars($_GET['aksi'])=='ubah'){
                 include 'ubahbobot2.php';
-            }elseif (@htmlspecialchars($_GET['aksi'])=='lihat'){
+            }else if(@htmlspecialchars($_GET['aksi'])=='lihat'){
                 include 'lihatbobot.php';
-            }else{
-                include 'tambahbobot2.php';
             }
             ?>
-        </div>
-    </div>
-    <div class="col-8">
-        <div class="panel">
-            <div class="panel-top">
-                <b class="text-blue">Daftar Bobot</b>
+      
+        <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Daftar Bobot</h3>
+             <!-- <a href="./?page=kriteria"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a> -->
             </div>
-            <div class="panel-middle">
-                <div class="table-responsive">
-                    <table>
-                        <thead><tr><th>No</th><th>Nama Barang</th><th>Aksi</th></tr></thead>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-bordered">
+              <thead><tr><th>No</th><th>Nama Barang</th><th>Aksi</th></tr></thead>
                         <tbody>
                         <?php
                         $query="SELECT bobot_kriteria.id_jenisbarang AS idbarangbobot,jenis_barang.namaBarang AS namaBarang FROM bobot_kriteria INNER JOIN jenis_barang WHERE bobot_kriteria.id_jenisbarang=jenis_barang.id_jenisbarang GROUP BY idbarangbobot ORDER BY idbarangbobot ASC";
@@ -48,9 +44,9 @@ require './connect.php';
                                     <td>$data[namaBarang]</td>
                                     <td>
                                     <div class='norebuttom'>
-                                    <a class=\"btn btn-green\" href='./?page=bobot&aksi=lihat&id=".$data['idbarangbobot']."'><i class='fa fa-eye'></i></a>
-                                    <a class=\"btn btn-light-green\" href='./?page=bobot&aksi=ubah&id=".$data['idbarangbobot']."'><i class='fa fa-pencil'></i></a>
-                                    <a class=\"btn btn-yellow\" data-a=".$data['namaBarang']." id='hapus' href='./proses/proseshapus.php/?op=bobot&id=".$data['idbarangbobot']."'><i class='fa fa-trash'></i></a></td>
+                                    <a class=\"btn btn-info\" href='./?page=bobot&aksi=lihat&id=".$data['idbarangbobot']."'><i class='fa fa-eye'></i></a>
+                                    <a class=\"btn btn-warning\" href='./?page=bobot&aksi=ubah&id=".$data['idbarangbobot']."'><i class='fa fa-pencil'></i></a>
+                                  <!--  <a class=\"btn btn-danger\" data-a=".$data['namaBarang']." id='hapus' href='./proses/proseshapus.php/?op=bobot&id=".$data['idbarangbobot']."'><i class='fa fa-trash'></i></a></td>-->
                                 </div></tr>";
                                 $no++;
                             }
@@ -58,11 +54,11 @@ require './connect.php';
                             echo "<tr><td  class='text-center text-green' colspan='4'><b>Kosong</b></td></tr>";
                         }
                         ?>
-                        </tbody>
-                    </table>
-                </div>
+                                </tbody>
+                </tbody>
+              </table>
             </div>
-            <div class="panel-bottom"></div>
-        </div>
+            <!-- /.box-body -->
+          </div>
+        </section>
     </div>
-</div>

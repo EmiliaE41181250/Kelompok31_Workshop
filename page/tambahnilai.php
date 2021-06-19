@@ -64,7 +64,7 @@
         ?>
     </div>
     <div class="panel-bottom">
-        <button type="submit" id="buttonsimpan" class="btn btn-green"><i class="fa fa-save"></i> Simpan</button>
-        <button type="reset" id="buttonreset" class="btn btn-second">Reset</button>
+        <button type="submit" id="buttonsimpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
+        <button type="reset" id="buttonreset" class="btn btn-secondary">Reset</button>
     </div>
 </form>

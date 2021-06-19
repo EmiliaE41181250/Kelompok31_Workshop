@@ -28,8 +28,8 @@ switch ($op){
                 <td>".$data['nilai']."</td>
                 <td>".$data['keterangan']."</td>
                 <td><div class='norebuttom'>
-                <a class=\"btn btn-light-green\" href='./?page=subkriteria&aksi=ubah&id=".$data['id_nilaikriteria']."'><i class='fa fa-pencil'></i></a>
-                <a class=\"btn btn-yellow\" data-a=\"nilai $data[nilai] dalam $data[nama_kriteria]\" id='hapus' href='./proses/proseshapus.php/?op=subkriteria&id=".$data['id_nilaikriteria']."'><i class='fa fa-trash'</a></td></div>
+                <a class=\"btn btn-warning\" href='./?page=subkriteria&aksi=ubah&id=".$data['id_nilaikriteria']."'><i class='fa fa-pencil'></i></a>
+                <a class=\"btn btn-danger\" data-a=\"nilai $data[nilai] dalam $data[nama_kriteria]\" id='hapus' href='./proses/proseshapus.php/?op=subkriteria&id=".$data['id_nilaikriteria']."'><i class='fa fa-trash'</a></td></div>
             </tr>";
             $no++;
         }
@@ -55,9 +55,9 @@ switch ($op){
                     <td>$data[nama_supplier]</td>
                     <td>
                     <div class='norebuttom'>
-                    <a class=\"btn btn-green\" href=\"./?page=penilaian&aksi=lihat&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-eye'></i></a>
-                    <a class=\"btn btn-light-green\" href=\"./?page=penilaian&aksi=ubah&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-pencil'></i></a>
-                    <a class=\"btn btn-yellow\" data-a=\".$data[namaBarang] - $data[nama_supplier]\" id='hapus' href='./proses/proseshapus.php/?op=nilai&id=".$data['id_supplier']."'><i class='fa fa-trash'></i></a></td>
+                    <a class=\"btn btn-info\" href=\"./?page=penilaian&aksi=lihat&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-eye'></i></a>
+                    <a class=\"btn btn-warning\" href=\"./?page=penilaian&aksi=ubah&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-pencil'></i></a>
+                    <a class=\"btn btn-danger\" data-a=\".$data[namaBarang] - $data[nama_supplier]\" id='hapus' href='./proses/proseshapus.php/?op=nilai&id=".$data['id_supplier']."'><i class='fa fa-trash'></i></a></td>
                 </div></tr>";
                 $no++;
             }

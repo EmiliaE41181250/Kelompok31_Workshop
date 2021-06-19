@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         Subkriteria
-        <small>Halaman Subkriteria</small>
+        <small>Halaman subkriteria</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -27,13 +27,13 @@
         </div>
         <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Daftar Subkriteria</h3>
+              <h3 class="box-title">Daftar subkriteria</h3>
               <a href="./?page=subkriteria"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">
-                    <thead><tr><th>No</th><th>Nama</th><th>Nilai</th><th>Sifat</th><th>Aksi</th></tr></thead>
+                    <thead><tr><th>No</th><th>Nama</th><th>Nilai</th><th>Keterangan</th><th>Aksi</th></tr></thead>
                     <tbody id="isiSubkriteria"></tbody>
                 </tbody>
               </table>
@@ -42,4 +42,3 @@
           </div>
     </section>
     </div>
-</div>

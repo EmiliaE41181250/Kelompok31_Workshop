@@ -9,19 +9,19 @@ while ($data=$getnilaiKriteria->fetch_array(MYSQLI_ASSOC)) {
 }
 ?>
 <div class="panel-top panel-top-edit">
-    <b><i class="fa fa-pencil"></i> Ubah data</b>
+    <b><i class="fa fas fa-pencil"></i> Ubah data</b>
 </div>
 <form id="form" action="./proses/prosesubah.php" method="POST">
     <input type="hidden" value="nilai" name="op">
     <div class="panel-middle">
         <div class="group-input">
             <?php
-            $query="SELECT nama_supplierFROM supplier WHERE id_supplier='$a'";
+            $query="SELECT nama_supplier FROM supplier WHERE id_supplier='$a'";
             $execute=$konek->query($query);
             $data=$execute->fetch_array(MYSQLI_ASSOC);
             ?>
             <div class="group-input">
-                <label for="jenisbarang">Nama Supplier</label>
+                <label for="jenisbarang">Nama Supplier </label>
                 <input class="form-custom" value="<?php echo $data['nama_supplier'];?>" disabled type="text" autocomplete="off" required name="jenisbarang" id="jenisbarang">
             </div>
         </div>
@@ -32,7 +32,7 @@ while ($data=$getnilaiKriteria->fetch_array(MYSQLI_ASSOC)) {
             $data=$execute->fetch_array(MYSQLI_ASSOC);
             ?>
             <div class="group-input">
-                <label for="jenisbarang">Jenis Barang</label>
+                <label for="jenisbarang">Jenis Barang </label>
                 <input class="form-custom" value="<?php echo $data['namaBarang'];?>" disabled type="text" autocomplete="off" required name="jenisbarang" id="jenisbarang" placeholder="jenisbarang">
             </div>
         </div>
@@ -42,7 +42,7 @@ while ($data=$getnilaiKriteria->fetch_array(MYSQLI_ASSOC)) {
         if ($execute->num_rows > 0){
             while($data=$execute->fetch_array(MYSQLI_ASSOC)){
                 echo "<div class=\"group-input\">";
-                echo "<label for=\"nilai\">$data[nama_kriteria]</label>";
+                echo "<label for=\"nilai\">$data[nama_kriteria] </label>";
                 echo "<input type='hidden' value=\"$data[id_nilaisupplier]\" name=\"id[]\">";
                 echo "<select class=\"form-custom\" required name=\"nilai[]\" id=\"nilai\">";
                 $query2="SELECT id_nilaikriteria,keterangan FROM nilai_kriteria WHERE id_kriteria='$data[id_kriteria]'";
@@ -65,7 +65,7 @@ while ($data=$getnilaiKriteria->fetch_array(MYSQLI_ASSOC)) {
         ?>
     </div>
     <div class="panel-bottom">
-        <button type="submit" id="buttonsimpan" class="btn btn-green"><i class="fa fa-save"></i> Simpan</button>
-        <button type="reset" id="buttonreset" class="btn btn-second">Reset</button>
+        <button type="submit" id="buttonsimpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
+        <button type="reset" id="buttonreset" class="btn btn-secondary">Reset</button>
     </div>
 </form>

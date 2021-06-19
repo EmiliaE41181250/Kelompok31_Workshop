@@ -54,7 +54,7 @@ $(document).ready(function () {
                         location.reload();
                     },100);
                 }else if (e=='ada data'){
-                    alert('Data tidak Boleh sama!');
+                    alert('Masukkan Data Dengan Benar!');
                     setTimeout(function () {
                         location.reload();
                     },100);

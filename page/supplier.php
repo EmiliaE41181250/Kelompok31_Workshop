@@ -31,10 +31,10 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <a href="./?page=supplier"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a>
+             <a href="./?page=supplier"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a>
               <table class="table table-bordered">
                 <tr>
-                    <th>No</th><th>Nama</th><th>Aksi</th>
+                    <th>No</th><th>Nama</th><th>Alamat</th><th>No HP</th><th>Aksi</th>
                 </tr>
                 <tbody>
                 <?php
@@ -47,10 +47,12 @@
                                 <tr id='data'>
                                     <td>$no</td>
                                     <td>$data[nama_supplier]</td>
+                                    <td>$data[alamat]</td>
+                                    <td>$data[no_hp]</td>
                                     <td>
                                     <div class='norebuttom'>
-                                    <a class=\"btn btn-success\" href='./?page=supplier&aksi=ubah&id=".$data['id_supplier']."'><i class='fa fa-pencil'></i></a>
-                                    <a class=\"btn btn-warning\" data-a=".$data['nama_supplier']." id='hapus' href='./proses/proseshapus.php/?op=supplier&id=".$data['id_supplier']."'><i class='fa fa-trash'></i></a>
+                                    <a class=\"btn btn-warning\" href='./?page=supplier&aksi=ubah&id=".$data['id_supplier']."'><i class='fa fa-pencil'></i></a>
+                                    <a class=\"btn btn-danger\" data-a=".$data['nama_supplier']." id='hapus' href='./proses/proseshapus.php/?op=supplier&id=".$data['id_supplier']."'><i class='fa fa-trash'></i></a>
                                     </div></td>
                                 </tr>";
                                 $no++;
@@ -66,4 +68,3 @@
           </div>
     </section>
     </div>
-</div>

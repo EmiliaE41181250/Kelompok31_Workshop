@@ -49,8 +49,8 @@ if ($execute2->num_rows == 0){
         }
         ?>
     </div>
-    <div class="panel-bottom">
-        <button type="submit" class="btn btn-blue">Simpan</button>
-        <button type="reset" class="btn btn-second">Reset</button>
-    </div>
+    <!--<div class="panel-bottom">
+        <button type="submit" class="btn btn-success">Simpan</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>-->
 </form>

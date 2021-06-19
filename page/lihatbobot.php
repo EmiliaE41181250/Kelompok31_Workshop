@@ -1,10 +1,10 @@
 <?php
 $listWeight=array(
-    array("nama"=>"0 - Sangat Rendah","nilai"=>0),
-    array("nama"=>"0.25 - Rendah","nilai"=>0.25),
-    array("nama"=>"0.5 - Tengah","nilai"=>0.5),
-    array("nama"=>"0.75 - Tinggi","nilai"=>0.75),
-    array("nama"=>"1 - Sangat Tinggi","nilai"=>1),
+    array("nama"=>"1 - Tidak terlalu penting","nilai"=>1),
+    array("nama"=>"2 - Kurang penting","nilai"=>2),
+    array("nama"=>"3 - Lumayan penting","nilai"=>3),
+    array("nama"=>"4 - Penting","nilai"=>4),
+    array("nama"=>"5 - Sangat penting","nilai"=>5),
 );
 $id=htmlspecialchars(@$_GET['id']);
 $querylihat="SELECT id_jenisbarang,bobot,id_bobotkriteria,kriteria.nama_kriteria AS nama_kriteria FROM bobot_kriteria INNER JOIN kriteria USING(id_kriteria) WHERE id_jenisbarang='$id'";
@@ -15,7 +15,7 @@ if ($execute2->num_rows == 0){
 ?>
 <!-- judul -->
 <div class="panel-top">
-    <b class="text-green">Detail data</b>
+    <b class="text-blue">Detail data</b>
 </div>
 <form>
     <div class="panel-middle">

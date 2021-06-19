@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         Penilaian
-        <small>Halaman Penilaian</small>
+        <small>Halaman penilaian</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -66,4 +66,3 @@
           </div>
     </section>
     </div>
-</div>

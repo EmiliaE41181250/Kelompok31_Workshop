@@ -18,7 +18,7 @@
             <div class="box-header with-border">
               <!-- <h3 class="box-title">Daftar hasil</h3> -->
               <div style="float: right;" class="input-dropdown">
-                <a  class="btn btn-blue" id="btn-dropdown" target="_blank" href="./cetakpdf.php"><i class="fa fa-print"></i> Cetak Pdf</a>
+               <!-- <a  class="btn btn-blue" id="btn-dropdown" target="_blank" href="./cetakpdf.php"><i class="fa fa-print"></i> Cetak Pdf</a>-->
                 </div>
               <div style="float:left;width: 300px;">
             <select class="form-custom" name="pilih"  id="pilihHasil">
@@ -50,4 +50,3 @@
           </div>
     </section>
     </div>
-</div>

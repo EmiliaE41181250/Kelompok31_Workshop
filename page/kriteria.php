@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         Kriteria
-        <small>Halaman Kriteria</small>
+        <small>Halaman kriteria</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -27,7 +27,7 @@
         </div>
         <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Daftar Kriteria</h3>
+              <h3 class="box-title">Daftar kriteria</h3>
               <a href="./?page=kriteria"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a>
             </div>
             <!-- /.box-header -->
@@ -47,8 +47,8 @@
                                     <td>$data[nama_kriteria]</td>
                                     <td>$data[sifat]</td>
                                     <td><div class='norebuttom'>
-                                    <a class=\"btn btn-light-green\" href='./?page=kriteria&aksi=ubah&id=".$data['id_kriteria']."'><i class='fa fa-pencil'></i></a>
-                                    <a class=\"btn btn-yellow\" data-a=".$data['nama_kriteria']." id='hapus' href='./proses/proseshapus.php/?op=kriteria&id=".$data['id_kriteria']."'><i class='fa fa-trash'></i></a></td>
+                                    <a class=\"btn btn-warning\"  href='./?page=kriteria&aksi=ubah&id=".$data['id_kriteria']."'><i class='fa fa-pencil'></i></a>
+                                    <a class=\"btn btn-danger\" data-a=".$data['nama_kriteria']." id='hapus' href='./proses/proseshapus.php/?op=kriteria&id=".$data['id_kriteria']."'><i class='fa fa-trash'></i></a></td>
                                 </div></tr>";
                                 $no++;
                             }
@@ -64,4 +64,3 @@
           </div>
     </section>
     </div>
-</div>
