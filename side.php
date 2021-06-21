@@ -39,7 +39,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="./?page=barang"><i class="fa fa-circle-o"></i> Data Barang</a></li>
+          
           <li><a href="./?page=supplier"><i class="fa fa-circle-o"></i> Data Supplier</a></li>
           <li class="treeview">
             <a href="#"><i class="fa fa-circle-o"></i> Data Kriteria
