@@ -67,7 +67,7 @@ $kriteria = $executeK->num_rows;
     <br>
     <!-- /.row (main row) -->
     <div class="card" style="width: 150px;;">
-      <img src="asset/image/dashboard-5.jpg" class="card-img-top" alt="...">
+      <img src="asset/image/dashboard-6.jpg" class="card-img-top" alt="...">
     </div>
 
   </section>
