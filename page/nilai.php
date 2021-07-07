@@ -32,27 +32,8 @@
             <div class="box-header with-border">
                 <h3 class="box-title">Daftar Penilaian</h3>
             </div>
-            <div style="float:right;width: 250px;">
-                <select class="form-custom" name="pilih" id="pilihNilai">
-                    <option value="">Semua Jenis Barang</option>;
-                    <?php
-                    $query = "SELECT*FROM jenis_barang";
-                    $execute = $konek->query($query);
-                    if ($execute->num_rows > 0) {
-                        while ($data = $execute->fetch_array(MYSQLI_ASSOC)) {
-                            if ($pilih == $data[id_jenisbarang]) {
-                                $selected = "selected";
-                            } else {
-                                $selected = null;
-                            }
-                            echo "<option $selected value=$data[id_jenisbarang]>$data[namaBarang]</option>";
-                        }
-                    } else {
-                        echo '<option disabled value="">Tidak ada data</option>';
-                    }
-                    ?>
-                </select>
-            </div>
+
+
             <!-- /.box-header -->
             <div class="box-body">
                 <table class="table table-bordered">
@@ -64,8 +45,40 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody id="isiNilai"></tbody>
+                    <tbody>
+                        <?php
+                        if (!empty($id)) {
+                            $where = "WHERE nilai_supplier.id_jenisbarang='$id'";
+                        } else {
+                            $where = null;
+                        }
+                        $query = "SELECT id_nilaisupplier,id_supplier,supplier.nama_supplier AS nama_supplier,jenis_barang.id_jenisbarang AS id_jenisbarang,jenis_barang.namaBarang AS namaBarang FROM nilai_supplier INNER JOIN supplier USING(id_supplier) INNER JOIN jenis_barang USING (id_jenisbarang) $where GROUP BY id_supplier ORDER BY id_jenisbarang,id_supplier ASC";
+                        $execute = $konek->query($query);
+                        if ($execute->num_rows > 0) {
+                            $no = 1;
+                            while ($data = $execute->fetch_array(MYSQLI_ASSOC)) {
+                                echo "
+                                     <tr id='data'>
+                                        <td>$no</td>
+                                        <td>$data[namaBarang]</td>
+                                        <td>$data[nama_supplier]</td>
+                                        <td>
+                                        <div class='norebuttom'>
+                                        <a class=\"btn btn-primary\" href=\"./?page=penilaian&aksi=lihat&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-eye'></i></a>
+                                        <a class=\"btn btn-warning\" href=\"./?page=penilaian&aksi=ubah&a=$data[id_supplier]&b=$data[id_jenisbarang]\"><i class='fa fa-pencil'></i></a>
+                                        <a class=\"btn btn-danger\" data-a=\".$data[namaBarang] - $data[nama_supplier]\" id='hapus' href='./proses/proseshapus.php/?op=nilai&id=" . $data['id_supplier'] . "'><i class='fa fa-trash'></i></a></td>
+                                        </div>
+                                    </tr>";
+                                $no++;
+                            }
+                        } else {
+                            echo "<tr><td  class='text-center text-green' colspan='4'><b>Kosong</b></td></tr>";
+                        }
+
+                        ?>
+
                     </tbody>
+
                 </table>
             </div>
             <!-- /.box-body -->
