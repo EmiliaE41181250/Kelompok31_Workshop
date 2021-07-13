@@ -44,13 +44,8 @@
           </thead>
           <tbody>
             <?php
-            if (!empty($id)) {
-              $where = "WHERE nilai_kriteria.id_kriteria='$id'";
-            } else {
-              $where = null;
-            }
 
-            $query = "SELECT id_nilaikriteria,nilai,keterangan,nama_kriteria,id_kriteria FROM nilai_kriteria INNER JOIN kriteria USING (id_kriteria) $where ORDER BY id_kriteria,nilai ASC";
+            $query = "SELECT id_nilaikriteria,nilai,keterangan,nama_kriteria,id_kriteria FROM nilai_kriteria INNER JOIN kriteria USING (id_kriteria) ORDER BY id_kriteria,nilai ASC";
             $execute = $konek->query($query);
             if ($execute->num_rows > 0) {
               $no = 1;
