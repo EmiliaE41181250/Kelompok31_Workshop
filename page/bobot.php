@@ -25,8 +25,8 @@
         <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Daftar Bobot</h3>
-             <!-- <a href="./?page=kriteria"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a> -->
-            </div>
+           <!-- <a href="./?page=bobot"><button class="btn btn-sm btn-primary pull-right mb-2"><i class="fa fa-plus"></i> Tambah Data</button></a> 
+          --></div>
             <!-- /.box-header -->
             <div class="box-body">
               <table class="table table-bordered">

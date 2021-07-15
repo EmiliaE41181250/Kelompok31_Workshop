@@ -20,7 +20,7 @@ switch ($page){
         include 'page/subkriteria.php';
         break;
     case 'bobot':
-        include 'page/bobot.php';
+        include 'page/bobot2.php';
         break;
     case 'penilaian':
         include 'page/nilai.php';
@@ -29,7 +29,10 @@ switch ($page){
         include 'page/hasil.php';
         break;
     case 'tambahbobot':
-        include 'page/tambahbobot.php';
+        include 'page/tambahbobot2.php';
+        break;
+    case 'ubahbobot':
+        include 'page/ubahbobot.php';
         break;
     default:
         include 'page/404.php';

@@ -10,7 +10,7 @@ $id=htmlspecialchars(@$_GET['id']);
 $querylihat="SELECT id_jenisbarang,bobot,id_bobotkriteria,kriteria.nama_kriteria AS nama_kriteria FROM bobot_kriteria INNER JOIN kriteria USING(id_kriteria) WHERE id_jenisbarang='$id'";
 $execute2=$konek->query($querylihat);
 if ($execute2->num_rows == 0){
-    header('location:./?page=bobot');
+    header('location:./?page=bobot2');
 }
 ?>
 <!-- judul -->
